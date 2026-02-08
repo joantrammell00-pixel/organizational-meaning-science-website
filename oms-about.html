@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — Organizational Meaning Science™ Institute</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1A4B6D;
+            --primary-light: #2A5F84;
+            --accent: #8B7355;
+            --accent-light: #A38968;
+            --text-dark: #1F1F1F;
+            --text-medium: #4A4A4A;
+            --text-light: #6B6B6B;
+            --bg-white: #FFFFFF;
+            --bg-light: #F8F9FA;
+            --bg-cream: #FAF8F5;
+            --border: #E0E0E0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.05rem;
+            margin-bottom: 1.2rem;
+            color: var(--text-medium);
+        }
+
+        .large-text {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-medium);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-medium);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: var(--bg-light);
+            padding: 4rem 0;
+            margin-bottom: 4rem;
+        }
+
+        .page-header-content {
+            max-width: 900px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 3rem 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .highlight-box {
+            background: var(--bg-cream);
+            border-left: 4px solid var(--accent);
+            padding: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .highlight-box p {
+            font-size: 1.15rem;
+            color: var(--text-dark);
+        }
+
+        /* Founder Section */
+        .founder-section {
+            background: var(--bg-cream);
+            padding: 4rem 0;
+        }
+
+        .founder-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .founder-bio {
+            background: var(--bg-white);
+            padding: 3rem;
+            border-top: 3px solid var(--primary);
+        }
+
+        .founder-name {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .founder-title {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .credentials-list {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .credential-item {
+            margin-bottom: 1rem;
+        }
+
+        .credential-item strong {
+            color: var(--primary);
+        }
+
+        .cta-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: color 0.3s ease;
+        }
+
+        .cta-link:hover {
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h4 {
+            color: var(--bg-white);
+            margin-bottom: 1rem;
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--bg-white);
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Organizational Meaning Science™ Institute</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="frameworks.html">Frameworks</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>About the Institute</h1>
+                <p class="large-text">The Organizational Meaning Science™ Institute serves as the research home for a discipline examining how meaning functions as a systemic force within organizations.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2>Mission</h2>
+            <p class="large-text">The Institute maintains theoretical foundations, research, and scholarly work for Organizational Meaning Science—an interdisciplinary discipline examining how meaning is constructed, disrupted, interpreted, and stabilized within individuals, teams, and organizational systems.</p>
+            
+            <p>Across leadership, organizational development, psychology, and management studies, meaning is frequently referenced yet rarely examined as a system in its own right. Leaders are encouraged to create purpose, align values, and foster shared understanding, while organizations invest heavily in culture initiatives intended to improve engagement and performance.</p>
+            
+            <p>Despite this emphasis, meaning itself often remains implicit—treated as an outcome, a byproduct, or a motivational lever rather than as a primary organizing force. This absence has consequences.</p>
+
+            <div class="highlight-box">
+                <p>When meaning is poorly understood, leaders may mistake surface-level alignment for coherence, misinterpret resistance as defiance, or apply behavioral solutions to interpretive problems. Culture initiatives stall, leadership efforts fragment, and organizations struggle to explain why technically sound strategies fail to take hold.</p>
+            </div>
+
+            <p>Organizational Meaning Science addresses this gap by establishing a unifying framework that explains how meaning operates systemically—providing both theoretical rigor and practical application for researchers, leaders, and organizational practitioners.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2>Research Focus</h2>
+            <p>The Institute's research examines:</p>
+            <ul style="margin-left: 2rem; margin-top: 1.5rem;">
+                <li style="margin-bottom: 1rem;"><strong>How meaning forms and stabilizes</strong> within individuals and systems through the Meaning Loop framework</li>
+                <li style="margin-bottom: 1rem;"><strong>How meaning disrupts and reorganizes</strong> during periods of change, transition, or strategic inflection</li>
+                <li style="margin-bottom: 1rem;"><strong>How interpretive divergence emerges</strong> and what it reveals about system conditions and meaning safety</li>
+                <li style="margin-bottom: 1rem;"><strong>How leadership signals are amplified</strong> through authority and the consequences of authority-driven interpretation</li>
+                <li style="margin-bottom: 1rem;"><strong>How systems can measure meaning dynamics</strong> without extracting content, diagnosing individuals, or violating dignity</li>
+                <li style="margin-bottom: 1rem;"><strong>How organizations can design for meaning stability</strong> through interpretive pacing, meaning safety, and repair processes</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2>Relationship to Applied Practice</h2>
+            <p>While the Institute maintains research and theoretical foundations, Organizational Meaning Science is applied through <strong>Noespera Studio</strong>—providing meaning-based engagements, strategic advisory, and customized frameworks to organizations navigating complexity, transition, and strategic change.</p>
+            
+            <p>This separation ensures that research remains rigorous and independent while supporting practitioners and organizations seeking to apply Meaning Science in real-world contexts.</p>
+
+            <p style="margin-top: 2rem;"><a href="https://noesperastudio.com" class="cta-link" target="_blank">Learn about applied practice at Noespera Studio →</a></p>
+        </div>
+    </section>
+
+    <section class="founder-section">
+        <div class="container">
+            <div class="founder-content">
+                <h2>Founder</h2>
+                <div class="founder-bio">
+                    <h3 class="founder-name">Joan deBien-Trammell, MBA, DSL</h3>
+                    <p class="founder-title">Founder, Organizational Meaning Science</p>
+                    
+                    <p>Joan deBien-Trammell is a strategic leadership researcher and the founder of Organizational Meaning Science. Her work translates organizational complexity into durable frameworks, decision architectures, and participatory methodologies grounded in rigorous research and applied across enterprise, nonprofit, and emerging organizational contexts.</p>
+
+                    <p>Drawing on decades of operational leadership experience—including roles at L'Oréal, Gallup, Pierre Fabre, and Sandoz—and advanced doctoral research in strategic leadership, she established Organizational Meaning Science to address a fundamental gap in how organizations understand and steward meaning as a systemic force.</p>
+
+                    <div class="credentials-list">
+                        <div class="credential-item">
+                            <strong>Doctorate in Strategic Leadership (DSL)</strong> — Liberty University<br>
+                            <span style="color: var(--text-light); font-size: 0.95rem;">Advanced research in strategic leadership, decision-making, organizational meaning, and systems thinking</span>
+                        </div>
+                        <div class="credential-item">
+                            <strong>ITES™ (Interpretation Through Experience Scale)</strong> — Patent Pending<br>
+                            <span style="color: var(--text-light); font-size: 0.95rem;">Proprietary research inventory measuring interpretive states and meaning dynamics within organizational systems</span>
+                        </div>
+                        <div class="credential-item">
+                            <strong>Noespera Studio</strong> — Founder & Principal<br>
+                            <span style="color: var(--text-light); font-size: 0.95rem;">Applied Organizational Meaning Science practice providing engagements, advisory, and frameworks</span>
+                        </div>
+                    </div>
+
+                    <a href="https://joandebientrammell.com" class="cta-link" target="_blank">View full profile and CV →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2>Contact & Collaboration</h2>
+            <p>For research inquiries, collaboration opportunities, or questions about Organizational Meaning Science:</p>
+            <p style="margin-top: 2rem; font-size: 1.15rem;"><a href="mailto:joan@noesperastudio.com" style="color: var(--primary); text-decoration: none;">joan@noesperastudio.com</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Institute</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="frameworks.html">Frameworks</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Applied Work</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://noesperastudio.com" target="_blank">Noespera Studio</a></li>
+                        <li><a href="https://joandebientrammell.com" target="_blank">Joan deBien-Trammell</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p style="color: rgba(255, 255, 255, 0.9);">For research inquiries or collaboration opportunities.</p>
+                    <p style="margin-top: 1rem;"><a href="mailto:joan@noesperastudio.com" style="color: rgba(255, 255, 255, 0.9);">joan@noesperastudio.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Noespera Studio, LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research — Organizational Meaning Science™ Institute</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1A4B6D;
+            --primary-light: #2A5F84;
+            --accent: #8B7355;
+            --accent-light: #A38968;
+            --text-dark: #1F1F1F;
+            --text-medium: #4A4A4A;
+            --text-light: #6B6B6B;
+            --bg-white: #FFFFFF;
+            --bg-light: #F8F9FA;
+            --bg-cream: #FAF8F5;
+            --border: #E0E0E0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.05rem;
+            margin-bottom: 1.2rem;
+            color: var(--text-medium);
+        }
+
+        .large-text {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-medium);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-medium);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: var(--bg-light);
+            padding: 4rem 0;
+            margin-bottom: 4rem;
+        }
+
+        .page-header-content {
+            max-width: 900px;
+        }
+
+        /* Papers Section */
+        .papers-section {
+            padding: 3rem 0;
+        }
+
+        .papers-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .paper {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .paper:hover {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transform: translateX(5px);
+        }
+
+        .paper-title {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-style: italic;
+        }
+
+        .paper-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .status {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            background: var(--bg-cream);
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .paper-abstract {
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+
+        /* IP Section */
+        .ip-section {
+            background: var(--bg-cream);
+            padding: 4rem 0;
+        }
+
+        .ip-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .ip-card {
+            background: var(--bg-white);
+            border-top: 3px solid var(--primary);
+            padding: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .ip-card h3 {
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h4 {
+            color: var(--bg-white);
+            margin-bottom: 1rem;
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--bg-white);
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .paper-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Organizational Meaning Science™ Institute</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html" class="active">Research</a></li>
+                <li><a href="frameworks.html">Frameworks</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Research & Publications</h1>
+                <p class="large-text">Scholarly work establishing theoretical foundations for Organizational Meaning Science and its application to leadership, organizational design, and strategic decision-making.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="papers-section">
+        <div class="container">
+            <div class="papers-content">
+                <h2>Foundational Papers</h2>
+                
+                <div class="paper">
+                    <h3 class="paper-title">Meaning Science: Foundations for Understanding Meaning as a Systemic Force</h3>
+                    <div class="paper-meta">
+                        <span class="meta-item">Joan deBien-Trammell, DSL</span>
+                        <span class="status">Forthcoming</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <p>This foundational paper establishes Organizational Meaning Science as an interdisciplinary research discipline examining how meaning functions as a systemic force within individuals, teams, and organizations.</p>
+                        <p>The paper argues for the necessity of Meaning Science in an era marked by complexity, rapid change, and widespread meaning instability. It introduces meaning as a structural phenomenon, outlines core architectural components including the Meaning Loop, and positions Meaning Science as a necessary complement to existing leadership and organizational disciplines.</p>
+                        <p>Rather than treating meaning as an abstract concept or aspirational outcome, the paper investigates how meaning is constructed, disrupted, interpreted, and stabilized over time—providing both theoretical rigor and practical application for researchers and practitioners.</p>
+                    </div>
+                </div>
+
+                <div class="paper">
+                    <h3 class="paper-title">Meaning Leadership: Interpreting, Stabilizing, and Repairing Meaning in Organizational Systems</h3>
+                    <div class="paper-meta">
+                        <span class="meta-item">Joan deBien-Trammell, DSL</span>
+                        <span class="status">Forthcoming</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <p>Leadership research has traditionally focused on behavior, style, and intent, while treating meaning as either implicit or synonymous with sensemaking. This paper introduces Meaning Leadership as a distinct leadership capacity concerned with how meaning forms, stabilizes, and fractures within organizational systems over time.</p>
+                        <p>The paper argues that leadership outcomes are mediated not by action alone, but by how leadership signals are interpreted through individual lenses and resolved at the system level. Meaning Leadership is defined as the capacity to sense interpretive divergence, maintain signal coherence, and repair meaning before trust fractures.</p>
+                        <p>The work distinguishes shared meaning from uniform interpretation, demonstrating that trust depends on interpretive compatibility rather than consensus. It introduces interpretive divergence as a measurable construct and proposes a framework for detecting meaning strain across teams, departments, and organizations.</p>
+                    </div>
+                </div>
+
+                <div class="paper">
+                    <h3 class="paper-title">Designing for Meaning Stability</h3>
+                    <div class="paper-meta">
+                        <span class="meta-item">Joan deBien-Trammell, DSL</span>
+                        <span class="status">Forthcoming</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <p>This paper explores system design principles for organizational meaning work, including meaning safety, interpretive pacing, and meaning repair as structural interventions rather than cultural aspirations.</p>
+                        <p>The work establishes explicit ethical boundaries governing observation, measurement, and intervention in meaning dynamics. It argues that meaning stability cannot be achieved through control or optimization, but rather through designing conditions that protect the system's capacity to interpret freely.</p>
+                        <p>Design implications include staged communication, dedicated interpretive forums, temporal buffers following disruptions, and role-sensitive pacing mechanisms. The paper maps interventions to phases within the Meaning Loop, demonstrating how organizations can act earlier with less force and greater effectiveness.</p>
+                    </div>
+                </div>
+
+                <div class="paper">
+                    <h3 class="paper-title">Leadership Styles Through the Meaning Lens</h3>
+                    <div class="paper-meta">
+                        <span class="meta-item">Joan deBien-Trammell, DSL</span>
+                        <span class="status">Forthcoming</span>
+                    </div>
+                    <div class="paper-abstract">
+                        <p>This paper applies the Meaning Science framework to leadership analysis, examining how different leadership approaches shape interpretive dynamics and meaning formation within organizational systems.</p>
+                        <p>Rather than evaluating leadership styles as inherently effective or ineffective, the work analyzes how leadership signals are interpreted, how authority amplifies or dampens meaning, and how leadership transitions create meaning disruption requiring intentional repair.</p>
+                        <p>The analysis provides interpretive frameworks for understanding leadership impact beyond behavior and intent, focusing on how leaders create conditions for meaning safety, manage interpretive pacing, and steward meaning through periods of change and complexity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ip-section">
+        <div class="container">
+            <div class="ip-content">
+                <h2>Intellectual Property</h2>
+                <div class="ip-card">
+                    <h3>ITES™ (Interpretation Through Experience Scale)</h3>
+                    <p><strong>Status:</strong> Patent Pending</p>
+                    <p><strong>Inventor:</strong> Joan deBien-Trammell, DSL</p>
+                    <p>Proprietary research inventory measuring interpretive states and meaning dynamics within organizational systems. ITES™ provides diagnostic visibility into how meaning is being interpreted at individual and system levels without extracting content or evaluating performance.</p>
+                    <p>The inventory enables ethical, participatory measurement of meaning climates over time, supporting baseline visibility, ongoing stewardship, and longitudinal understanding of how meaning settles, shifts, or persists within organizational environments.</p>
+                    <p>ITES™ is grounded in response state dynamics (defend, defer, withdraw, integrate, align, advocate) and measures interpretive divergence, meaning safety, and system-level coherence without individual attribution or covert observation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Institute</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="frameworks.html">Frameworks</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Applied Work</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://noesperastudio.com" target="_blank">Noespera Studio</a></li>
+                        <li><a href="https://joandebientrammell.com" target="_blank">Joan deBien-Trammell</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p style="color: rgba(255, 255, 255, 0.9);">For research inquiries or collaboration opportunities.</p>
+                    <p style="margin-top: 1rem;"><a href="mailto:joan@noesperastudio.com" style="color: rgba(255, 255, 255, 0.9);">joan@noesperastudio.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Noespera Studio, LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
