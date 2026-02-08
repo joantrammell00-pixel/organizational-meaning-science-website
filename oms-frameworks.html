@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frameworks — Organizational Meaning Science Institute</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1A4B6D;
+            --primary-light: #2A5F84;
+            --accent: #8B7355;
+            --accent-light: #A38968;
+            --text-dark: #1F1F1F;
+            --text-medium: #4A4A4A;
+            --text-light: #6B6B6B;
+            --bg-white: #FFFFFF;
+            --bg-light: #F8F9FA;
+            --bg-cream: #FAF8F5;
+            --border: #E0E0E0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        p {
+            font-size: 1.05rem;
+            margin-bottom: 1.2rem;
+            color: var(--text-medium);
+        }
+
+        .large-text {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-medium);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-medium);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: var(--bg-light);
+            padding: 4rem 0;
+            margin-bottom: 4rem;
+        }
+
+        .page-header-content {
+            max-width: 900px;
+        }
+
+        /* Framework Section */
+        .framework-section {
+            padding: 3rem 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .framework {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .framework h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .framework-phases {
+            margin-top: 2rem;
+        }
+
+        .phase {
+            background: var(--bg-cream);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary);
+        }
+
+        .phase h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .phase p {
+            font-size: 1rem;
+        }
+
+        /* Response States Grid */
+        .states-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .state-card {
+            background: var(--bg-cream);
+            padding: 1.5rem;
+            border-top: 3px solid var(--accent);
+        }
+
+        .state-card h4 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Principles List */
+        .principles-list {
+            margin-top: 2rem;
+        }
+
+        .principle-item {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--primary);
+        }
+
+        .principle-item h4 {
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h4 {
+            color: var(--bg-white);
+            margin-bottom: 1rem;
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--bg-white);
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .states-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Organizational Meaning Science Institute</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="frameworks.html" class="active">Frameworks</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Frameworks & Core Constructs</h1>
+                <p class="large-text">Foundational models and constructs that make meaning dynamics visible, measurable, and actionable within organizational systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="framework-section">
+        <div class="container">
+            
+            <div class="framework">
+                <h3>The Meaning Loop</h3>
+                <p>The Meaning Loop is the core structural model explaining how meaning forms, stabilizes, and reorganizes within individuals and systems over time.</p>
+                <p>Rather than treating meaning as static or linear, the Loop demonstrates how meaning operates as a dynamic, cyclical process—continuously updated by feedback, context, and new information.</p>
+                
+                <div class="framework-phases">
+                    <div class="phase">
+                        <h4>1. New Information</h4>
+                        <p>A signal, communication, or event enters the system—triggering the interpretive process.</p>
+                    </div>
+                    <div class="phase">
+                        <h4>2. Interpretive Lens Activation</h4>
+                        <p>Prior context, meaning memory, and individual experience shape how the information is initially perceived.</p>
+                    </div>
+                    <div class="phase">
+                        <h4>3. Meaning Assignment</h4>
+                        <p>The individual or group assigns meaning to the information based on interpretive lenses and available context.</p>
+                    </div>
+                    <div class="phase">
+                        <h4>4. Response State Activation</h4>
+                        <p>Meaning triggers observable response states (defend, defer, withdraw, integrate, align, advocate) that shape behavior and engagement.</p>
+                    </div>
+                    <div class="phase">
+                        <h4>5. Feedback</h4>
+                        <p>Response states generate feedback—visible actions, communication, or silence—that influences how meaning is interpreted by others.</p>
+                    </div>
+                    <div class="phase">
+                        <h4>6. Updated Context</h4>
+                        <p>Feedback becomes new context, updating the system's meaning memory and influencing how future information is interpreted.</p>
+                    </div>
+                </div>
+
+                <p style="margin-top: 2rem;">The Loop operates continuously, with each cycle shaping the conditions for the next. Interventions that target specific phases can stabilize meaning, repair disruption, or prevent escalation without controlling interpretation.</p>
+            </div>
+
+            <div class="framework">
+                <h3>Response States</h3>
+                <p>Response states are observable, measurable states individuals and groups enter when meaning is activated. They are dynamic and situational—not personality traits or fixed characteristics.</p>
+                <p>Understanding response states allows leaders and systems to recognize interpretive conditions without diagnosing individuals or attributing intent.</p>
+
+                <div class="states-grid">
+                    <div class="state-card">
+                        <h4>Defend</h4>
+                        <p>Protective response activated when meaning threatens identity, competence, or status. Manifests as resistance, justification, or counterargument.</p>
+                    </div>
+                    <div class="state-card">
+                        <h4>Defer</h4>
+                        <p>Interpretive holding pattern where meaning remains provisional. Individual or group delays closure, awaiting additional clarity or context.</p>
+                    </div>
+                    <div class="state-card">
+                        <h4>Withdraw</h4>
+                        <p>Disengagement response when meaning cannot be safely integrated. Manifests as silence, reduced participation, or psychological exit.</p>
+                    </div>
+                    <div class="state-card">
+                        <h4>Integrate</h4>
+                        <p>Active processing state where meaning is being incorporated into existing understanding. Requires interpretive safety and pacing.</p>
+                    </div>
+                    <div class="state-card">
+                        <h4>Align</h4>
+                        <p>Coherence state where meaning resonates with existing identity, values, or purpose. Generates commitment and ownership.</p>
+                    </div>
+                    <div class="state-card">
+                        <h4>Advocate</h4>
+                        <p>Amplification state where meaning is championed, defended, or transmitted to others. Indicates deep internalization and endorsement.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="framework">
+                <h3>Interpretive Divergence</h3>
+                <p>Interpretive divergence is the measurable gap between how meaning is intended and how it is actually interpreted across a system.</p>
+                <p>Divergence is not the same as misalignment. It is diagnostic information about system conditions, interpretive load, and the coherence of meaning signals.</p>
+                <p>High divergence indicates one or more of the following:</p>
+                <ul style="margin-left: 2rem; margin-top: 1rem;">
+                    <li style="margin-bottom: 0.5rem;">Poor interpretive pacing (information delivered faster than the system can integrate)</li>
+                    <li style="margin-bottom: 0.5rem;">Low meaning safety (interpretation carries perceived risk)</li>
+                    <li style="margin-bottom: 0.5rem;">Authority amplification (signals from leadership are over- or under-interpreted)</li>
+                    <li style="margin-bottom: 0.5rem;">Meaning memory conflict (new information contradicts prior context)</li>
+                </ul>
+                <p style="margin-top: 1.5rem;">Measuring divergence allows systems to intervene before trust fractures, resistance hardens, or withdrawal becomes widespread.</p>
+            </div>
+
+            <div class="framework">
+                <h3>Meaning Safety</h3>
+                <p>Meaning safety refers to the structural conditions that allow interpretation to occur without triggering escalation, suppression, or identity threat.</p>
+                <p>It is not the same as psychological safety or interpersonal comfort. Meaning safety concerns interpretive risk—whether provisional meaning can be held, questioned, or revised without penalty.</p>
+                
+                <div class="principles-list">
+                    <div class="principle-item">
+                        <h4>Exploration vs. Commitment</h4>
+                        <p>Systems signal clearly when interpretation is expected to remain open and when closure is required.</p>
+                    </div>
+                    <div class="principle-item">
+                        <h4>Normalized Variance</h4>
+                        <p>Interpretive divergence is treated as information about system conditions, not as misalignment or resistance.</p>
+                    </div>
+                    <div class="principle-item">
+                        <h4>Protected Repair</h4>
+                        <p>Meaning can be revisited after disruption without reputational cost, allowing stabilization rather than forced coherence.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="framework">
+                <h3>Interpretive Pacing</h3>
+                <p>Interpretive pacing addresses the mismatch between the speed of information delivery and the system's capacity to integrate meaning.</p>
+                <p>Poor pacing generates forced coherence—premature alignment that appears efficient while generating downstream escalation, resistance, or withdrawal.</p>
+                <p>Proper pacing allows meaning to stabilize organically rather than defensively, protecting system coherence without slowing execution.</p>
+
+                <div class="principles-list">
+                    <div class="principle-item">
+                        <h4>Staged Communication</h4>
+                        <p>Initial messages framed as orientational rather than decisive, allowing provisional interpretation before closure.</p>
+                    </div>
+                    <div class="principle-item">
+                        <h4>Dedicated Interpretive Forums</h4>
+                        <p>Spaces separate from decision-making where questions and divergence are permitted without pressure for alignment.</p>
+                    </div>
+                    <div class="principle-item">
+                        <h4>Temporal Buffers</h4>
+                        <p>Planned delays following major disruptions, allowing meaning to reorganize before feedback hardens interpretation.</p>
+                    </div>
+                    <div class="principle-item">
+                        <h4>Role-Sensitive Pacing</h4>
+                        <p>Recognition that proximity to authority, risk, or decision-making alters interpretive capacity and requires adjusted timing.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="framework">
+                <h3>Meaning Repair</h3>
+                <p>Meaning repair is the process by which meaning is revisited, restabilized, or reorganized after disruption—without reputational cost or system-level penalty.</p>
+                <p>Repair is not correction. It is stabilization following interpretive strain, allowing systems to reorganize meaning without attributing blame or diagnosing failure.</p>
+                <p>Systems that protect repair processes maintain coherence through change. Systems that penalize repair generate defensive alignment and meaning instability.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Institute</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="frameworks.html">Frameworks</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Applied Work</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://noesperastudio.com" target="_blank">Noespera Studio</a></li>
+                        <li><a href="https://joandebientrammell.com" target="_blank">Joan deBien-Trammell</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p style="color: rgba(255, 255, 255, 0.9);">For research inquiries or collaboration opportunities.</p>
+                    <p style="margin-top: 1rem;"><a href="mailto:joan@noesperastudio.com" style="color: rgba(255, 255, 255, 0.9);">joan@noesperastudio.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Organizational Meaning Science Institute. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

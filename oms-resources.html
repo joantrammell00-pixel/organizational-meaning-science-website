@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources — Organizational Meaning Science Institute</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1A4B6D;
+            --primary-light: #2A5F84;
+            --accent: #8B7355;
+            --accent-light: #A38968;
+            --text-dark: #1F1F1F;
+            --text-medium: #4A4A4A;
+            --text-light: #6B6B6B;
+            --bg-white: #FFFFFF;
+            --bg-light: #F8F9FA;
+            --bg-cream: #FAF8F5;
+            --border: #E0E0E0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1.05rem;
+            margin-bottom: 1.2rem;
+            color: var(--text-medium);
+        }
+
+        .large-text {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--text-medium);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-medium);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: var(--bg-light);
+            padding: 4rem 0;
+            margin-bottom: 4rem;
+        }
+
+        .page-header-content {
+            max-width: 900px;
+        }
+
+        /* Resources Section */
+        .resources-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 0;
+        }
+
+        .definition-group {
+            margin-bottom: 4rem;
+        }
+
+        .definition {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .definition dt {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .definition dd {
+            color: var(--text-medium);
+            line-height: 1.7;
+        }
+
+        /* Applied Resources */
+        .applied-section {
+            background: var(--bg-cream);
+            padding: 4rem 0;
+        }
+
+        .applied-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .resource-card {
+            background: var(--bg-white);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-top: 3px solid var(--primary);
+        }
+
+        .resource-card h4 {
+            margin-bottom: 1rem;
+        }
+
+        .resource-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .resource-link:hover {
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h4 {
+            color: var(--bg-white);
+            margin-bottom: 1rem;
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--bg-white);
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Organizational Meaning Science Institute</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="frameworks.html">Frameworks</a></li>
+                <li><a href="resources.html" class="active">Resources</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1>Resources</h1>
+                <p class="large-text">Key definitions, terminology, and foundational concepts for understanding Organizational Meaning Science.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="resources-content">
+        <div class="container">
+            
+            <div class="definition-group">
+                <h2>Core Definitions</h2>
+                
+                <dl>
+                    <div class="definition">
+                        <dt>Organizational Meaning Science</dt>
+                        <dd>An interdisciplinary research discipline examining meaning as a systemic force that shapes perception, behavior, identity, and coordination within individuals, teams, and organizations. Meaning Science investigates how meaning is constructed, disrupted, interpreted, and stabilized over time.</dd>
+                    </div>
+
+                    <div class="definition">
+                        <dt>Meaning</dt>
+                        <dd>The interpretive assignment individuals and groups make when encountering information, signals, or events. Meaning is not inherent in the signal itself—it is constructed through the interaction between the signal, interpretive lenses, and available context.</dd>
+                    </div>
+
+                    <div class="definition">
+                        <dt>Meaning as a Systemic Force</dt>
+                        <dd>Meaning operates not as an individual psychological phenomenon alone, but as a force that shapes collective behavior, organizational identity, and system-level coordination. Changes in meaning generate observable shifts in engagement, alignment, and response patterns across systems.</dd>
+                    </div>
+
+                    <div class="definition">
+                        <dt>Interpretive Lens</dt>
+                        <dd>The accumulated context, prior experience, and meaning memory through which individuals and groups interpret new information. Lenses are shaped by identity, role, history, and relational dynamics within the system.</dd>
+                    </div>
+
+                    <div class="definition">
+                        <dt>Meaning Memory</dt>
+                        <dd>The system's accumulated interpretive history—how past events, decisions, and communications have been understood and internalized. Meaning memory influences how new information is interpreted and whether it aligns with or contradicts prior context.</dd>
+                    </div>
+
+                    <div class="definition">
+                        <dt>Sensemaking vs. Meaning Science</dt>
+                        <dd>Sensemaking focuses on how individuals and groups interpret ambiguous or novel situations to reduce uncertainty. Meaning Science examines how meaning operates systemically across time—including stable meaning, meaning disruption, and the conditions that allow meaning to reorganize without harm.</dd>
+                    </div>
+                </dl>
+            </div>
+
+            <div class="definition-group">
+                <h2>Key Constructs</h2>
+                
+                <dl>
+                    <div class="definition">
+                        <dt>Interpretive Divergence</dt>
+                        <dd>The measurable gap between how meaning is intended and how it is interpreted across a system. Divergence is diagnostic information about interpretive load, meaning safety, and signal coherence—not evidence of misalignment or resistance.</dd>
+                    </div>
+
+                    <div class="definition">
+                        <dt>Authority Amplification</dt>
+                        <dd>The phenomenon where signals from individuals in positions of authority are interpreted with heightened weight and consequence. Authority amplifies both clarity and ambiguity, making leadership communication particularly vulnerable to interpretive distortion.</dd>
+                    </div>
+
+                    <div class="definition">
+                        <dt>Forced Coherence</dt>
+                        <dd>Premature alignment generated when systems pressure closure before meaning has stabilized. Forced coherence creates the appearance of agreement while masking latent divergence, which resurfaces as resistance, withdrawal, or escalation.</dd>
+                    </div>
+
+                    <div class="definition">
+                        <dt>Meaning Strain</dt>
+                        <dd>The condition where interpretive load exceeds the system's capacity to integrate meaning safely. Strain manifests as increased response state volatility, interpretive divergence, and escalation risk.</dd>
+                    </div>
+
+                    <div class="definition">
+                        <dt>Meaning Climate</dt>
+                        <dd>The prevailing interpretive conditions within a system at a given point in time. Climate includes meaning safety, pacing adequacy, repair capacity, and the distribution of response states across the system.</dd>
+                    </div>
+                </dl>
+            </div>
+
+            <div class="definition-group">
+                <h2>Ethical Principles</h2>
+                
+                <dl>
+                    <div class="definition">
+                        <dt>No Individual Attribution</dt>
+                        <dd>Interpretive data must never be used to label, rank, predict, or evaluate individuals. Response states are situational and structural; attributing them to character or capability violates scientific integrity and ethical practice.</dd>
+                    </div>
+
+                    <div class="definition">
+                        <dt>Participatory & Transparent</dt>
+                        <dd>Systems designed to observe meaning dynamics must be transparent in purpose and scope. Participants should understand what is being observed, why it is being observed, and how insights will be used.</dd>
+                    </div>
+
+                    <div class="definition">
+                        <dt>Stewardship vs. Manipulation</dt>
+                        <dd>Designing for meaning safety, pacing, or repair must not be used to engineer compliance, suppress dissent, or preemptively neutralize response states. Meaning safety exists to protect agency, not constrain it.</dd>
+                    </div>
+
+                    <div class="definition">
+                        <dt>Irreducibility of Meaning</dt>
+                        <dd>Meaning cannot be fully controlled, predicted, or optimized without loss of dignity and autonomy. Ethical practice designs conditions that protect the system's ability to interpret freely, rather than attempting to direct what interpretation should become.</dd>
+                    </div>
+                </dl>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="applied-section">
+        <div class="container">
+            <div class="applied-content">
+                <h2>Applied Practice Resources</h2>
+                <p class="large-text">Organizational Meaning Science is applied through Noespera Studio, which provides meaning-based engagements, strategic advisory, and customized frameworks.</p>
+
+                <div class="resource-card">
+                    <h4>Noespera Studio</h4>
+                    <p>Applied Organizational Meaning Science practice providing meaning check-ins, DNA frameworks, and strategic advisory to organizations navigating complexity and transition.</p>
+                    <a href="https://noesperastudio.com" class="resource-link" target="_blank">Visit Noespera Studio →</a>
+                </div>
+
+                <div class="resource-card">
+                    <h4>Joan deBien-Trammell, DSL</h4>
+                    <p>Founder of Organizational Meaning Science. Personal site includes CV, research background, and scholarly work.</p>
+                    <a href="https://joandebientrammell.com" class="resource-link" target="_blank">View Profile →</a>
+                </div>
+
+                <div class="resource-card">
+                    <h4>Research Inquiries</h4>
+                    <p>For collaboration opportunities, speaking engagements, or questions about Organizational Meaning Science research.</p>
+                    <a href="mailto:joan@noesperastudio.com" class="resource-link">Contact the Institute →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Institute</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="frameworks.html">Frameworks</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Applied Work</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://noesperastudio.com" target="_blank">Noespera Studio</a></li>
+                        <li><a href="https://joandebientrammell.com" target="_blank">Joan deBien-Trammell</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p style="color: rgba(255, 255, 255, 0.9);">For research inquiries or collaboration opportunities.</p>
+                    <p style="margin-top: 1rem;"><a href="mailto:joan@noesperastudio.com" style="color: rgba(255, 255, 255, 0.9);">joan@noesperastudio.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Organizational Meaning Science Institute. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
